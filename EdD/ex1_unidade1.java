@@ -1,7 +1,7 @@
-package EdD_unidade1;
+package EdD;
 import java.util.Scanner;
 
-public class ex1 {
+public class ex1_unidade1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String [] nomes = new String[5];

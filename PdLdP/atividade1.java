@@ -2,9 +2,12 @@ package PdLdP;
 
 public class atividade1 {
     public static void main(String[] args) {
-        System.out.println(somaFracaoPotenciaDeDois(3));
+        System.out.println(somaDeDivisoesPorDois(0));
+        System.out.println(somaAlternada(0));
+        System.out.println(somaQueVaiAumentandoDois(0));
     }
-    public static double somaFracaoPotenciaDeDois(int n) {
+
+    public static double somaDeDivisoesPorDois(int n) {
         if (n == 0) return 0;
 
         double total = 0;
@@ -17,7 +20,8 @@ public class atividade1 {
 
         return total;
     }
-    public static double somaSerieAlternada(int n) {
+
+    public static double somaAlternada(int n) {
         if (n == 0) return 0;
         
         double resultado = 1;
@@ -32,7 +36,7 @@ public class atividade1 {
         return resultado;
     }
 
-    public static int somaQuadrados(int n) {
+    public static int somaQueVaiAumentandoDois(int n) {
         if (n== 0) return 0;
         if (n == 1) return 1;
 

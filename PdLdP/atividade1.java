@@ -2,32 +2,25 @@ package PdLdP;
 
 public class atividade1 {
     public static void main(String[] args) {
-        System.out.println(somaSerieAlternada(3));
+        System.out.println(somaSerieAlternada(4));
     }
     public static double somaFracaoPotenciaDeDois(int n) {
         if (n == 0) return 0;
         return 1.0 / Math.pow(2, n) + somaFracaoPotenciaDeDois(n - 1);
     }
     public static double somaSerieAlternada(int n) {
-        if (n==0) return 0; 
+        if (n == 0) return 0;
         
-        int it = 1;      
-        float contador = 2 + ((it-2) *3);
-        float resultado = 0;
-
-        for (int i = 1; i <= n; i++){
-            if (i == 1 ){
-                resultado ++;               
-            } else {
-                if (i%2 == 0){
-                    resultado -= 1.0/contador;
-                } else {
-                    resultado +=1.0/contador;   
-                }
-            }
-            it++;
+        double resultado = 1;
+        int sinal = -1;
+        
+        for (int i = 2; i <= n; i++) {
+            double contador = 2 + (i - 2) * 3.0; 
+            resultado += sinal * (1.0 / contador); 
+            sinal *= -1; 
         }
-        return resultado;        
+        
+        return resultado;
     }
 
     public static int somaQuadrados(int n) {

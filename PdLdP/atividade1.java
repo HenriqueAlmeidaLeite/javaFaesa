@@ -2,9 +2,9 @@ package PdLdP;
 
 public class atividade1 {
     public static void main(String[] args) {
-        System.out.println(somaDeDivisoesPorDois(0));
-        System.out.println(somaAlternada(0));
-        System.out.println(somaQueVaiAumentandoDois(0));
+        System.out.println(somaDeDivisoesPorDois(4));
+        System.out.println(somaAlternada(4));
+        System.out.println(somaQueVaiAumentandoDois(4));
     }
 
     public static double somaDeDivisoesPorDois(int n) {
@@ -41,10 +41,12 @@ public class atividade1 {
         if (n == 1) return 1;
 
         int total = 1;
+        int soma = 1;
         int contador = 3;
 
         for (int i = 2; i <= n; i++){
-            total += contador;
+            soma += contador;
+            total += soma;
             contador += 2;
         }
 

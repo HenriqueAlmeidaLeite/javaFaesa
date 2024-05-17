@@ -1,7 +1,7 @@
-package EdD;
+package EdD.U1;
 import java.util.Scanner;
 
-public class ex1_unidade1 {
+public class ex2_unidade1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String [] nomes = new String[5];
@@ -11,25 +11,26 @@ public class ex1_unidade1 {
         int cont2 = 0;
         float mm = 0;
         String ma = "";
+        aluno alu = new aluno();
 
         while (cont < 5) {
             System.out.println("Digite seu nome: ");
-            String nome = scanner.nextLine();
+            alu.nome = scanner.nextLine();
             System.out.println();
 
             System.out.println("Digite sua média: ");
-            float media = scanner.nextFloat();
+            alu.media = scanner.nextFloat();
             scanner.nextLine();
             System.out.println();
 
             System.out.println("Digite o seu número de faltas: ");
-            int falta = scanner.nextInt();
+            alu.falta = scanner.nextInt();
             scanner.nextLine();
             System.out.println();
 
-            nomes[cont] = nome;
-            medias[cont] = media;
-            faltas[cont] = falta;
+            nomes[cont] = alu.nome;
+            medias[cont] = alu.media;
+            faltas[cont] = alu.falta;
             cont++;
         }
 
@@ -58,3 +59,10 @@ public class ex1_unidade1 {
         scanner.close();
     }
 }
+
+class aluno{
+    String nome;
+    float media;
+    int falta;
+}
+

@@ -55,22 +55,28 @@ public class ex1 {
                     int modifica = scanner.nextInt();
                     int posiçãoPraModificar = lista.pesquisa(modifica);
                     Item itemPraModificar = lista.getItem(posiçãoPraModificar);
-                    
+
                     System.out.println("Qual nome você quer dar para esse item?");
                     itemPraModificar.setNome(scanner.next());
                     break;
 
                 case 4:
-
+                    lista.removePos(lista.getQuant());
                     break;
 
                 case 5:
-
+                    System.out.println();
+                    System.out.println("Digite o código do elemento que você quer remover: ");
+                    lista.remove(scanner.nextInt());
                     break;
 
                 case 6:
-
+                if (lista.toString() == "") {
+                    System.out.println("Nenhum cadastro foi feito");
                     break;
+                }
+                System.out.println(lista.toString());
+                break;
 
                 case 7:
                 System.out.println();

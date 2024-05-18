@@ -28,7 +28,7 @@ public class ex1 {
 
             int opção = scanner.nextInt();
             scanner.nextLine();
-            
+
             switch (opção) {
                 case 1:
                     int codigo = adicionarCódigo();
@@ -40,7 +40,7 @@ public class ex1 {
                     break;
                 
                 case 2:
-                    System.out.println("Qual código você quer procurar?");
+                    System.out.println("Você quer saber a posição de qual código?");
                     int posi = lista.pesquisa(scanner.nextInt());
                     if (posi == -1) {
                         System.out.println("Não encontrei esse código");
@@ -51,7 +51,13 @@ public class ex1 {
                     }
 
                 case 3:
-
+                    System.out.println("Digite o código do item que você quer modificar o nome: ");
+                    int modifica = scanner.nextInt();
+                    int posiçãoPraModificar = lista.pesquisa(modifica);
+                    Item itemPraModificar = lista.getItem(posiçãoPraModificar);
+                    
+                    System.out.println("Qual nome você quer dar para esse item?");
+                    itemPraModificar.setNome(scanner.next());
                     break;
 
                 case 4:
@@ -73,6 +79,7 @@ public class ex1 {
                     return;
 
                 default:
+                System.out.println();
                 System.out.println("Opção inválida");
                 menu();
                     break;

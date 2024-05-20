@@ -1,15 +1,14 @@
 package EdD.U2;
 
 import java.util.Scanner;
-import EdD.U2.LSEItem;
 
 public class ex3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LSEItem lista = new LSEItem();
         int valor = 1;
-        int total = 0;
-        int repetições = 0;
+        double total = 0;
+        double repetições = 0;
 
         while (valor != 0) {
             System.out.println();
@@ -33,9 +32,10 @@ public class ex3 {
         lista.insereFinal(item);
     }
 
-    public static double media(int total, int repetições){
+    public static double media(double total, double repetições){
         if (total == 0) {
-            
+            System.out.println("Nenhum valor adicionado.");
+            return 0;
         }
         double media = total/repetições;
         return media;

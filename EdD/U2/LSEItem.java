@@ -1,7 +1,5 @@
 package EdD.U2;
 
-import EdD.U2.Item;
-import EdD.U2.NoItem;
 
 public class LSEItem {
 	private NoItem prim, ult;

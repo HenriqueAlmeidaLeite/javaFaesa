@@ -202,5 +202,33 @@ public class LdeItem {
 
         } 
     }
+
+
+
+	public void remover(int pos){
+        NoDuploItem posiçãoAtual = this.prim;
+
+		if (eVazio()) {
+			System.out.println("A lista está vazia, então não há como remover nada");
+			return;
+		}
+
+        if (pos > quant || pos < 0) {
+            System.out.println("Essa posição não existe.");
+            return;
+        }
+		for (int i = 0; i<pos; i++){
+			posiçãoAtual = posiçãoAtual.getProx();
+		}
+
+		NoDuploItem proximo = posiçãoAtual.getProx();
+		NoDuploItem anterior = posiçãoAtual.getAnt();
+
+		anterior.setProx(proximo);
+		proximo.setAnt(anterior);
+		remove(posiçãoAtual.getItem().getCodigo());
+		quant--;
+
+    }
 }
 

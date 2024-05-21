@@ -5,32 +5,46 @@ public class LdeItem {
 	private NoDuploItem prim, ult;
 	private int quant;
 	
+
+
 	public LdeItem () {
 		this.prim = null;
 		this.ult = null;
 		this.quant=0;
 	}
 
+
+
 	public int getQuant() {
 		return quant;
 	}
+
+
 
 	public NoDuploItem getPrim() {
 		return prim;
 	}
 
+
+
 	public void setPrim(NoDuploItem prim) {
 		this.prim = prim;
 	}
+
+
 
 	public NoDuploItem getUlt() {
 		return ult;
 	}
 
+
+
 	public void setUlt(NoDuploItem ult) {
 		this.ult = ult;
 	}
 	
+
+
 	public boolean eVazio () {
 		if (this.quant == 0) {
 			return true;
@@ -38,6 +52,8 @@ public class LdeItem {
 		return false;
 	}
 	
+
+
 	public void insereInicio (Item item) {
 		NoDuploItem novoNo = new NoDuploItem(item);
 		
@@ -51,6 +67,8 @@ public class LdeItem {
 		this.quant++;
 	}
 	
+
+
 	public void insereUltimo (Item item) {
 		NoDuploItem novoNo = new NoDuploItem(item);
 		
@@ -64,6 +82,8 @@ public class LdeItem {
 		this.quant++;
 	}
 	
+
+
 	public NoDuploItem pesquisa (int num) {
 		NoDuploItem aux = this.prim;
 		
@@ -76,6 +96,8 @@ public class LdeItem {
 		return aux;
 	}
 	
+
+
 	public NoDuploItem remove (int num) {
 		NoDuploItem aux = null;
 		if (eVazio()) {
@@ -109,6 +131,8 @@ public class LdeItem {
 		return aux;
 	}
 	
+
+
 	public String toString () {
 		String temp="";
 		NoDuploItem aux= this.prim;
@@ -120,6 +144,8 @@ public class LdeItem {
 		return temp;
 	}
 	
+
+
 	public String toStringInvertido () {
 		String temp="";
 		NoDuploItem aux= this.ult;
@@ -130,6 +156,9 @@ public class LdeItem {
 		}
 		return temp;
 	}
+
+
+
 	public NoDuploItem getNo (int pos) {
 		NoDuploItem aux = this.prim;
 		
@@ -143,5 +172,28 @@ public class LdeItem {
 		return aux;
 	}
 
+
+    
+    public String insere(int pos, Item itemNovo){
+        NoDuploItem posiçãoAtual = this.prim;
+        NoDuploItem novo = new NoDuploItem(itemNovo);
+
+        if (pos <= quant || pos> 0){
+            for (int i = 0; i<pos; i++){
+                posiçãoAtual = posiçãoAtual.getProx();
+            }
+            posiçãoAtual.getAnt().setProx(novo);
+            novo.setProx(posiçãoAtual);
+        } else {
+            for (int i = 0; i<pos; i++){
+                posiçãoAtual = posiçãoAtual.getProx();
+            }
+            posiçãoAtual.getAnt().setProx(novo);
+            novo.setProx(posiçãoAtual);
+        }
+
+        String resultado = "deu tudo certo";
+        return resultado;
+        }
 }
 

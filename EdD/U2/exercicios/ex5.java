@@ -1,6 +1,10 @@
-package EdD.U2;
+package EdD.U2.exercicios;
 
 import java.util.Scanner;
+
+import EdD.U2.bases.Item;
+import EdD.U2.bases.LSEItem;
+import EdD.U2.bases.NoItem;
 
 public class ex5 {
     public static void main(String[] args) {

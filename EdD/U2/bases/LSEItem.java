@@ -1,5 +1,4 @@
-package EdD.U2;
-
+package EdD.U2.bases;
 
 public class LSEItem {
 	private NoItem prim, ult;

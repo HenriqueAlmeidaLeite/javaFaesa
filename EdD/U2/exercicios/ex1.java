@@ -1,6 +1,9 @@
-package EdD.U2;
+package EdD.U2.exercicios;
 
 import java.util.Scanner;
+
+import EdD.U2.bases.Item;
+import EdD.U2.bases.LCItem;
 
 public class ex1 {
     static Scanner scanner = new Scanner(System.in);

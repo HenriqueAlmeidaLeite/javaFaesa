@@ -1,6 +1,9 @@
-package EdD.U2;
+package EdD.U2.exercicios;
 
 import java.util.Scanner;
+
+import EdD.U2.bases.Item;
+import EdD.U2.bases.LSEItem;
 
 public class ex3 {
     public static void main(String[] args) {

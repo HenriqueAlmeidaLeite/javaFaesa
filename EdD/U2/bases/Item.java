@@ -1,4 +1,4 @@
-package EdD.U2;
+package EdD.U2.bases;
 
 public class Item {
 	private int codigo;

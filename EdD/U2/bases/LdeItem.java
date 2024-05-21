@@ -230,5 +230,33 @@ public class LdeItem {
 		quant--;
 
     }
+
+
+
+	public void dividirListas(LdeItem lista1, LdeItem lista2){
+		if (lista1.getQuant() == 0) {
+			System.out.println("A primeira lista não pode estar vazia.");
+		}
+
+		if (lista2.getQuant() != 0) {
+			System.out.println("A segunda lista precisa estar vazia.");
+			return;
+		}
+
+		int divisao = lista1.getQuant()/2;
+		NoDuploItem posiçãoAtual = this.prim;
+
+		for (int i = 0; i<lista1.getQuant(); i++){
+			if (i > divisao) {
+				lista2.insereUltimo();
+			}
+			posiçãoAtual = posiçãoAtual.getProx();
+		}
+		
+		for (int i = divisao + 1; i < lista1.getQuant(); i++){
+
+		}
+
+	}
 }
 

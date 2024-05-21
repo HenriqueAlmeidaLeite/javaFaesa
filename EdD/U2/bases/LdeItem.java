@@ -174,26 +174,33 @@ public class LdeItem {
 
 
     
-    public String insere(int pos, Item itemNovo){
+    public void insere(int pos, Item itemNovo){
         NoDuploItem posiçãoAtual = this.prim;
         NoDuploItem novo = new NoDuploItem(itemNovo);
 
-        if (pos <= quant || pos> 0){
-            for (int i = 0; i<pos; i++){
-                posiçãoAtual = posiçãoAtual.getProx();
-            }
-            posiçãoAtual.getAnt().setProx(novo);
-            novo.setProx(posiçãoAtual);
+        if (pos > quant || pos < 0) {
+            System.out.println("Essa posição não existe.");
+            return;
+        }
+
+        if (quant == 0) {
+            insereInicio(itemNovo);
+
+        } else if (quant == pos) {
+            insereUltimo(itemNovo);
+
         } else {
             for (int i = 0; i<pos; i++){
                 posiçãoAtual = posiçãoAtual.getProx();
             }
-            posiçãoAtual.getAnt().setProx(novo);
+            NoDuploItem anterior = posiçãoAtual.getAnt();
+            anterior.setProx(novo);
+            novo.setAnt(anterior);
             novo.setProx(posiçãoAtual);
-        }
+            posiçãoAtual.setAnt(novo);
+            quant++;
 
-        String resultado = "deu tudo certo";
-        return resultado;
-        }
+        } 
+    }
 }
 

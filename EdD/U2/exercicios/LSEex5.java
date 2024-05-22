@@ -6,7 +6,7 @@ import EdD.U2.bases.Item;
 import EdD.U2.bases.LSEItem;
 import EdD.U2.bases.NoItem;
 
-public class ex5 {
+public class LSEex5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LSEItem lista = new LSEItem();

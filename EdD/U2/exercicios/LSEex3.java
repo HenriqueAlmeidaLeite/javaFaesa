@@ -5,7 +5,7 @@ import java.util.Scanner;
 import EdD.U2.bases.Item;
 import EdD.U2.bases.LSEItem;
 
-public class ex3 {
+public class LSEex3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LSEItem lista = new LSEItem();

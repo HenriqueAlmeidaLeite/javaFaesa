@@ -5,7 +5,7 @@ import java.util.Scanner;
 import EdD.U2.bases.Item;
 import EdD.U2.bases.LCItem;
 
-public class ex1 {
+public class LSEex1 {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("\n\nSeja bem-vindo!\n\nO que voce deseja fazer?");

@@ -236,6 +236,7 @@ public class LdeItem {
 	public void dividirListas(LdeItem lista1, LdeItem lista2){
 		if (lista1.getQuant() == 0) {
 			System.out.println("A primeira lista não pode estar vazia.");
+			return;
 		}
 
 		if (lista2.getQuant() != 0) {
@@ -244,13 +245,15 @@ public class LdeItem {
 		}
 
 		int divisao = lista1.getQuant()/2;
-		NoDuploItem posiçãoAtual = this.prim;
+		NoDuploItem posiçãoAtual = lista1.getPrim();
 
 		for (int i = 0; i<lista1.getQuant(); i++){
 			if (i > divisao) {
-				lista2.insereUltimo();
+				lista2.insereUltimo(lista1.getNo(i).getItem());
+				lista1.remover(i);
+				posiçãoAtual = posiçãoAtual.getProx();
 			}
-			posiçãoAtual = posiçãoAtual.getProx();
+	
 		}
 		
 		for (int i = divisao + 1; i < lista1.getQuant(); i++){

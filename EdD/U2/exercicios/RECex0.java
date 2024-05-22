@@ -43,6 +43,7 @@ public class RECex0 {
         } else {
             System.out.println("O caracter que você digitou não está presente na String");
         }
+        scanner.close();
     }
 
     public static boolean ehOuNaoEh(String str, char ch){

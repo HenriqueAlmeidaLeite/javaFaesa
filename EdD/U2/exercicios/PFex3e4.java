@@ -15,12 +15,13 @@ public class PFex3e4 {
         }
 
         while (!pilha1.isEmpty()) {
-            if (pilha1.getTop().getItem().getCodigo() != pilha1.getTop().getItem().getCodigo() || !pilha1.getTop().getItem().getNome().equals(pilha1.getTop().getItem().getNome())){
+            if (pilha1.getTop().getItem().getCodigo() != pilha2.getTop().getItem().getCodigo() || !pilha1.getTop().getItem().getNome().equals(pilha2.getTop().getItem().getNome())){
                 return false;           
             }
 
             Item item1 = new Item(pilha1.getTop().getItem().getCodigo(), pilha1.getTop().getItem().getNome());
             Item item2 = new Item(pilha2.getTop().getItem().getCodigo(), pilha2.getTop().getItem().getNome());
+            
             pilha1.pop();
             pilha2.pop();
 

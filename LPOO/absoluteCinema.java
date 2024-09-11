@@ -3,7 +3,7 @@ package LPOO;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Cinema{ 
+public class absoluteCinema{ 
     static Scanner scanner = new Scanner(System.in);
     static ArrayList<Sessão> Sessões = new ArrayList<>();
     public static void main(String[] args) {

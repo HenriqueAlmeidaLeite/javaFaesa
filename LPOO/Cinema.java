@@ -85,25 +85,50 @@ public class Cinema{
         System.out.println();
         for (int i=0; i<=Sessões.size()-1; i++){
             System.out.println("Filme " + (i+1) + ": " + Sessões.get(i).getNomeFilme());
-            System.out.println("Horário: " + Sessões.get(i).getHorario() + "horas");
+            System.out.println("Horário: " + Sessões.get(i).getHorario());
             System.out.println();
         }
 
+        System.out.println();
         System.out.println("Escolha o número de um dos filmes: ");
         int esc = scanner.nextInt()-1;
+
+        if (esc+1 > Sessões.size() || (esc+1) < 1) {
+            System.out.println();
+            System.out.println("Opção inválida. Tente outra vez.");
+            System.out.println();
+            vender(cont);
+            return;
+        }
 
         System.out.println();
         Sessões.get(esc).assento1.mostrarLugares();
 
         System.out.println();
-        System.out.println("Diga o número da fila que você quer sentar: ");
-        int fila = scanner.nextInt();
+        System.out.println("Diga o número do linha que você quer sentar: ");
+        int linha = scanner.nextInt();
+
+        if (linha > 5 || linha < 1) {
+            System.out.println();
+            System.out.println("Opção inválida. Tente outra vez.");
+            System.out.println();
+            vender(cont);
+            return;
+        }
 
         System.out.println();
-        System.out.println("Diga o número do assento que você quer: ");
-        int cadeira = scanner.nextInt();
+        System.out.println("Diga o número da coluna que você quer sentar: ");
+        int coluna = scanner.nextInt();
 
-        boolean val = Sessões.get(esc).venda(fila, cadeira);
+        if (coluna > 4 || coluna < 1) {
+            System.out.println();
+            System.out.println("Opção inválida. Tente outra vez.");
+            System.out.println();
+            vender(cont);
+            return;
+        }
+
+        boolean val = Sessões.get(esc).venda(coluna, linha);
         if (val == true) {
             System.out.println();
             System.out.println("Assento escolhido com sucesso!");
@@ -114,12 +139,19 @@ public class Cinema{
     }
 
 }
-class Assento{
+class Assento {
     boolean disponivel[][] = new boolean[5][4];
 
-    public void mostrarLugares(){
-        for (int i = 0; i <=4; i++){
-            for (int b = 0; b <=3; b++){
+    public void mostrarLugares() {
+        System.out.print("  ");
+        for (int b = 1; b <= 4; b++) {
+            System.out.print("  " + b + "  ");
+        }
+        System.out.println();
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print((i+1) + " ");
+            for (int b = 0; b < 4; b++) {
                 if (disponivel[i][b] == true) {
                     System.out.print("| X  ");
                 } else {
@@ -136,16 +168,16 @@ class Assento{
 
 class Sessão{
     String nomeFilme;
-    String horario;
+    String horario;     //Optamos por usar o tipo String para que o usuário possa usar os ":" entre as horas e os minutos
     static double preço = 50.00;
 
     Assento assento1 = new Assento();
 
-    public boolean venda(int fila, int assento){
-        if (assento1.disponivel[fila][assento] == true) {                
+    public boolean venda(int coluna, int linha){
+        if (assento1.disponivel[linha-1][coluna-1] == true) {                
             return false;
         } else {
-            assento1.disponivel[fila][assento] = true;
+            assento1.disponivel[linha-1][coluna-1] = true;
             return true;
         }
     }
